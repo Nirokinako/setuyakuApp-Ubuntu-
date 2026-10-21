@@ -12,7 +12,7 @@ import lombok.Setter;
 
 @Getter
 @Setter 
-public class SetuyakuModel {
+public class FoodRecord {
 
     private Integer id;
 
@@ -27,5 +27,5 @@ public class SetuyakuModel {
     private Integer price;
     @NotNull(message = "カロリーを入力してください")
     @Size (min = 1, max = 20, message = "カロリーは1以上20以下である必要があります")
-    private Integer calorie;
+    private Integer cal;
 }

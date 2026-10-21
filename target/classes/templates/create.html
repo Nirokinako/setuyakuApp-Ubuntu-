@@ -6,7 +6,7 @@
     <title>Document</title>
 </head>
 <body>
-    <form th:action="@{setuyaku/create}" method="post" th:object="${setuyakuModel}">
+    <form th:action="@{setuyaku/create}" method="post" th:object="${foodRecord}">
         <table>
             <h1>やせまるくん<h1>
             <tr>
@@ -19,12 +19,16 @@
             </tr>
             <tr>
                 <td>カロリー</td>
-                <td><input type="number" th:field="*{calorie}" placeholder="200"></td>
+                <td><input type="number" th:field="*{cal}" placeholder="200"></td>
             </tr>
             <tr>
                 <td><input type="submit" value="登録"></td>
             </tr>
         </table>
+        <footer>
+            <a th:href="@{/setuyaku/record}">摂生奮闘記</a>
+        </footer>
+    </form>
     
 </body>
 </html>

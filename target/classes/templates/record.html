@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Record</title>
+</head>
+<body>
+    <h1>摂生奮闘記</h1>
+    <tabele>
+        <tr>
+            <td>食品名</td>
+            <td th:text="${foodRecord.food}"></td>
+        </tr>
+        <tr>
+            <td>価格</td>
+            <td th:text="${foodRecord.price}"></td>
+        </tr>
+        <tr>
+            <td>カロリー</td>
+            <td th:text="${foodRecord.cal}"></td>
+        </tr>
+    </tabele>
+    <footer>
+        <a th:href="@{/setuyaku/form}">戻る</a>
+    </footer>
+</body>
+</html>
