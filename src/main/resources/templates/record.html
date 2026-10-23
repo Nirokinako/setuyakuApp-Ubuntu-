@@ -7,20 +7,18 @@
 </head>
 <body>
     <h1>摂生奮闘記</h1>
-    <tabele>
+    <table>
         <tr>
             <td>食品名</td>
-            <td th:text="${foodRecord.food}"></td>
-        </tr>
-        <tr>
             <td>価格</td>
-            <td th:text="${foodRecord.price}"></td>
-        </tr>
-        <tr>
             <td>カロリー</td>
+        </tr>
+        <tr th:each="foodRecord : ${foodRecord}">
+            <td th:text="${foodRecord.foodName}"></td>
+            <td th:text="${foodRecord.price}"></td>
             <td th:text="${foodRecord.cal}"></td>
         </tr>
-    </tabele>
+    </table>
     <footer>
         <a th:href="@{/setuyaku/form}">戻る</a>
     </footer>

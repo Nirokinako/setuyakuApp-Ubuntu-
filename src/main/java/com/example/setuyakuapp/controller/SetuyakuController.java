@@ -1,5 +1,7 @@
 package com.example.setuyakuapp.controller;
 
+import java.util.List;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -44,15 +46,16 @@ public class SetuyakuController {
     /**
      * 食品情報をデータベースに登録する
      */
-    @PostMapping("/create")
+    @PostMapping("/form")
     public String postMethodName(@Valid FoodRecord foodRecord, BindingResult result) {
+        System.out.println("エラー有無: " + result.hasErrors() + " / " + result.getAllErrors());
         if(result.hasErrors()) {
             return "create";
         }
         /**
          * データベースに登録
          */
-        ss.record(foodRecord);
+        ss.setFoodElement(foodRecord);
 
         /**
          * 摂生奮闘記画面に遷移
@@ -63,7 +66,7 @@ public class SetuyakuController {
 
     @GetMapping("/record")
     public String recordDisplay(Model model) {
-        FoodRecord foodRecord = ss.getFoodRecord(new FoodRecord());
+        List<FoodRecord> foodRecord = ss.getFoodRecord(new FoodRecord());
         model.addAttribute("foodRecord", foodRecord);
         return "record";
     }

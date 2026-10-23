@@ -6,21 +6,29 @@
     <title>Document</title>
 </head>
 <body>
-    <form th:action="@{setuyaku/create}" method="post" th:object="${foodRecord}">
+    <form th:action="@{/setuyaku/form}" method="post" th:object="${foodRecord}">
         <table>
             <h1>やせまるくん<h1>
             <tr>
-                <td>食品名</td>
-                <td><input type="text" th:field="*{food}" placeholder="からあげ"></td>
+                <td>記録日</td>
+                <td><input type="date" th:field="*{recordDate}" placeholder="2026-01-01"></td>
             </tr>
+            <div th:if="${#fields.hasErrors('recordDate')}" th:errors="*{recordDate}" style="color: red"></div>
+            <tr>
+                <td>食品名</td>
+                <td><input type="text" th:field="*{foodName}" placeholder="からあげ"></td>
+            </tr>
+            <div th:if="${#fields.hasErrors('foodName')}" th:errors="*{foodName}" style="color: red"></div>
             <tr>
                 <td>価格</td>
                 <td><input type="number" th:field="*{price}" placeholder="100"></td>
             </tr>
+            <div th:if="${#fields.hasErrors('price')}" th:errors="*{price}" style="color: red"></div>
             <tr>
                 <td>カロリー</td>
                 <td><input type="number" th:field="*{cal}" placeholder="200"></td>
             </tr>
+            <div th:if="${#fields.hasErrors('cal')}" th:errors="*{cal}" style="color: red"></div>
             <tr>
                 <td><input type="submit" value="登録"></td>
             </tr>

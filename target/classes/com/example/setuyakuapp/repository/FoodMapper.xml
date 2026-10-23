@@ -4,11 +4,11 @@
     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.example.setuyakuapp.repository.FoodMapper">
     <insert id="setFoodElement" parameterType="com.example.setuyakuapp.entity.FoodEntity">
-        INSERT INTO foodrecord (id , record_date, food_name, price, cal)
-        VALUES (#{id}, #{recordDate}, #{foodName}, #{price}, #{cal})
+        INSERT INTO foodrecord (record_date, food_name, price, cal)
+        VALUES (#{recordDate}, #{foodName}, #{price}, #{cal})
     </insert>
 
-    <select id ="getFoodRecords" resultType="com.example.setuyakuapp.entity.FoodEntity">
+    <select id ="getFoodRecord" resultType="com.example.setuyakuapp.entity.FoodEntity">
         SELECT * FROM foodrecord
     </select>
 </mapper>

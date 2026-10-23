@@ -10,7 +10,7 @@ public class FoodEntity {
     /**
      * ID
      */
-    private Integer  id;
+    private Long  id;
 
     /**
      * 登録日

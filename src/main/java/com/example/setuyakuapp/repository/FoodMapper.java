@@ -1,5 +1,7 @@
 package com.example.setuyakuapp.repository;
 
+import java.util.List;
+
 import org.apache.ibatis.annotations.Mapper;
 
 import com.example.setuyakuapp.model.FoodRecord;
@@ -14,5 +16,5 @@ public interface FoodMapper {
     /**
      * 登録情報ほデータベースから取得する
      */
-    void getFoodElement(FoodRecord foodRecord);
+    List<FoodRecord> getFoodRecord(FoodRecord foodRecord);
 }

@@ -1,5 +1,7 @@
 package com.example.setuyakuapp.service;
 
+import java.util.List;
+
 import org.springframework.stereotype.Service;
 
 import com.example.setuyakuapp.model.FoodRecord;
@@ -17,7 +19,7 @@ public class SetuyakuService {
     /**
      * 食品情報をデータベースに登録する
      */
-    public FoodRecord record(FoodRecord foodRecord) {
+    public FoodRecord setFoodElement(FoodRecord foodRecord) {
         foodMapper.setFoodElement(foodRecord);
         return foodRecord;
     }
@@ -25,8 +27,7 @@ public class SetuyakuService {
     /**
      * 登録情報をデータベースから取得する
      */
-    public FoodRecord getFoodRecord(FoodRecord foodRecord) {
-        foodMapper.getFoodElement(foodRecord);
-        return foodRecord;
+    public List<FoodRecord> getFoodRecord(FoodRecord foodRecord) {
+        return foodMapper.getFoodRecord(foodRecord);
     }
 }
